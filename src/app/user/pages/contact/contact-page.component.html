@@ -1,0 +1,41 @@
+<section class="contact">
+  <canvas #canvas class="webgl" aria-hidden="true"></canvas>
+
+  <div class="content">
+    <app-section-header
+      title="Contact"
+      subtitle="Send a message — stored in the in-memory ContactMessageDB and visible in the admin dashboard."
+    />
+
+    <div class="layout">
+      <app-glass-card class="form-card" padding="lg">
+        <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+          <label>
+            <span>Name</span>
+            <input type="text" formControlName="name" autocomplete="name" placeholder="Your name" />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" formControlName="email" autocomplete="email" placeholder="you@domain.com" />
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea formControlName="message" rows="5" placeholder="Tell me about your project…"></textarea>
+          </label>
+
+          <button class="submit" type="submit" [disabled]="form.invalid">Send message</button>
+
+          <p class="success" *ngIf="sent">Thanks — your message was saved to the mock inbox.</p>
+        </form>
+      </app-glass-card>
+
+      <app-glass-card class="aside" padding="lg">
+        <h3>3D presence</h3>
+        <p class="muted">
+          This page runs a lightweight wireframe core with additive particles. It follows your pointer for a subtle,
+          premium interaction layer behind the glass form.
+        </p>
+      </app-glass-card>
+    </div>
+  </div>
+</section>

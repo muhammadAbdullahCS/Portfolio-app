@@ -1,0 +1,18 @@
+<section class="projects">
+  <canvas #canvas class="webgl" aria-hidden="true"></canvas>
+
+  <div class="content">
+    <app-section-header
+      title="Projects"
+      subtitle="Dynamic list powered by the mock ProjectDB — add, edit, or remove entries from the admin dashboard."
+    />
+
+    <div class="cards">
+      <app-glass-card *ngFor="let p of projects" class="project-card" padding="md">
+        <div class="thumb" [style.background-image]="'url(' + p.image + ')'"></div>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.description }}</p>
+      </app-glass-card>
+    </div>
+  </div>
+</section>

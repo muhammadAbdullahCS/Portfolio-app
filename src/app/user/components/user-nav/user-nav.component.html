@@ -1,0 +1,15 @@
+<nav class="nav" aria-label="Primary">
+  <a routerLink="/" class="brand">Portfolio</a>
+  <ul class="links">
+    <li *ngFor="let l of links">
+      <a
+        [routerLink]="l.path"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="l.path === '/' ? { exact: true } : { exact: false }"
+      >
+        {{ l.label }}
+      </a>
+    </li>
+  </ul>
+  <a routerLink="/admin/login" class="admin-pill">Admin</a>
+</nav>

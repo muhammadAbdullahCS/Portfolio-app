@@ -1,0 +1,28 @@
+<section class="about">
+  <canvas #canvas class="webgl" aria-hidden="true"></canvas>
+
+  <div class="content">
+    <app-section-header [title]="content.aboutTitle" [subtitle]="content.aboutBio" />
+
+    <div class="grid">
+      <app-glass-card class="card" padding="lg">
+        <h3>Stack & craft</h3>
+        <p>
+          Architecture-first Angular apps, typed services, and immersive WebGL layers — composed so you can swap the mock
+          backend for a real API without rewriting the UI.
+        </p>
+        <ul class="pill-list">
+          <li *ngFor="let s of skills">{{ s }}</li>
+        </ul>
+      </app-glass-card>
+
+      <app-glass-card class="card" padding="lg">
+        <h3>3D skills field</h3>
+        <p class="muted">
+          Each pillar maps to a skill from your content service. Move your pointer — the camera gently follows for a
+          tactile, premium feel.
+        </p>
+      </app-glass-card>
+    </div>
+  </div>
+</section>
